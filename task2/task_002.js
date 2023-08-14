@@ -15,15 +15,17 @@ const getData = async (url) => {
 try{
     const data = await getData(url); 
     console.log(data);
-
+    
     data.message.forEach(el => {
-        setTimeout(() => 
+        setTimeout( ()=>
             renderImg(el), 3000);
     });
-
-    const renderImg = (el) =>{
+    
+    const renderImg = (el)=> {
+        console.log(el)
         dogs.insertAdjacentHTML('beforeend', `
                 <img src='${el}' alert="pic" />`);
+
     }
 } catch (error) {
     console.error('Что-то пошло не так!');
